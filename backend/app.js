@@ -16,9 +16,10 @@ var app = express();
 
 var mongoose = require('mongoose')
 mongoose.Promise = bluebird
-mongoose.connect('mongodb://127.0.0.1:27017/todoapp', { useMongoClient: true})
-.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : mongodb://127.0.0.1:27017/todoapp`)})
-.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : mongodb://127.0.0.1:27017/todoapp`)})
+const connection = `mongodb://${process.env.MONGO_DB_HOST}:27017/todoapp`;
+mongoose.connect(connection, { useMongoClient: true})
+.then(()=> { console.log(`Succesfully Connected to the Mongodb Database  at URL : ${connection}`)})
+.catch(()=> { console.log(`Error Connecting to the Mongodb Database at URL : ${connection}`)})
 
 
 app.use(function(req, res, next) {
