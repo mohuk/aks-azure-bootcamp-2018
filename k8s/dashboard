@@ -1,0 +1,6 @@
+#!/bin/sh
+
+R_GRP=testaks
+CLSTR=testaks
+
+az aks browse --resource-group $R_GRP --name $CLSTR

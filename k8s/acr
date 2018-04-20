@@ -1,0 +1,15 @@
+#!/bin/sh
+
+R_GRP=testaks
+REG=testaks
+CLSTR=testaks
+
+# Create Azure Container Registry
+echo Creating Azure Container Registry
+az acr create --resource-group $R_GRP --name $REG --sku Basic
+
+# Setup ACR permissions to be accessed by AKS
+echo Setting up ACR permissions
+CLIENT_ID=$(az aks show --resource-group $R_GRP --name $CLSTR --query "servicePrincipalProfile.clientId" --output tsv)
+ACR_ID=$(az acr show --name $REG --resource-group $R_GRP --query "id" --output tsv)
+az role assignment create --assignee $CLIENT_ID --role Reader --scope $ACR_ID

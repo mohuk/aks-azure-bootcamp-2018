@@ -1,0 +1,18 @@
+#!/bin/sh
+
+REG=testaks
+
+# Login to ACR
+echo Logging into ACR
+az acr login --name $REG
+
+# Build backend container
+echo Building backend container
+docker build -t $REG.azurecr.io/api ../backend
+
+# Build frontend container
+echo Building frontend container
+docker build -t $REG.azurecr.io/app ../frontend
+
+docker push $REG.azurecr.io/api
+docker push $REG.azurecr.io/app
