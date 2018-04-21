@@ -1,0 +1,6 @@
+#!/bin/sh
+
+R_GRP=todo
+CLSTR=todo
+
+az aks browse --resource-group $R_GRP --name $CLSTR
