@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REG=todo
+REG=todoapp
 
 # Login to ACR
 echo Logging into ACR
