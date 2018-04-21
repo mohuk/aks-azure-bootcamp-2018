@@ -3,19 +3,19 @@
 R_GRP=todo
 CLSTR=todo
 
-# Enable AKS preview
+# Enable AKS preview (Already done)
 echo Signing up for AKS preview
-# az provider register -n Microsoft.Network
-# az provider register -n Microsoft.Storage
-# az provider register -n Microsoft.Compute
-# az provider register -n Microsoft.ContainerService
+az provider register -n Microsoft.Network
+az provider register -n Microsoft.Storage
+az provider register -n Microsoft.Compute
+az provider register -n Microsoft.ContainerService
 
-# Create Azure Resource Group
+# Create Azure Resource Group (Already done)
 echo Create Azure Resource Group - $R_GRP
 az group create --name $R_GRP --location centralus
 
-# Create AKS Cluster on Resource Group
+# Create AKS Cluster on Resource Group (Already done)
 az aks create --resource-group $R_GRP --name $CLSTR --node-count 1 --generate-ssh-keys
 
-# Connect to AKS Cluster
+# Connect to AKS Cluster (Already done)
 az aks get-credentials --resource-group $R_GRP --name $CLSTR
