@@ -1,7 +1,7 @@
 #!/bin/sh
 
 R_GRP=todo
-CLSTR=todo-cluster
+CLSTR=todo
 
 # Enable AKS preview
 echo Signing up for AKS preview

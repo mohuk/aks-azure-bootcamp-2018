@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REG=testaks
+REG=todo
 
 # Login to ACR
 echo Logging into ACR

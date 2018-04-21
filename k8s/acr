@@ -1,8 +1,8 @@
 #!/bin/sh
 
-R_GRP=testaks
-REG=testaks
-CLSTR=testaks
+R_GRP=todo
+REG=todo
+CLSTR=todo
 
 # Create Azure Container Registry
 echo Creating Azure Container Registry
